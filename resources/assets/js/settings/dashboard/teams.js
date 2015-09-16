@@ -64,6 +64,7 @@ Vue.component('spark-settings-teams-screen', {
 
             this.createTeamForm.errors = [];
             this.createTeamForm.creating = true;
+            this.$http.options.emulateJSON = true;
 
             this.$http.post('/settings/teams', this.createTeamForm)
                 .success(function (teams) {
